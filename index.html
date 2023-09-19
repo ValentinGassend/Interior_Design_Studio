@@ -1,13 +1,137 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+</head>
+<body>
+<header class="Header">
+    <a class="Header-logo" href="./index.html"><img src="./public/logo.png" class="Header-logo--img"></a>
+    <div class="Header-nav">
+        <a class="Header-nav--item" href="index.html#about">About</a>
+        <a class="Header-nav--item" href="index.html#project">Projects</a>
+        <a class="Header-nav--item" href="index.html#contacts">Contacts</a>
+    </div>
+</header>
+<div class="Landing">
+    <a class="Landing-link Btn-primary">
+      <span>
+      view all
+      </span>
+        <span>
+        projects
+      </span>
+    </a>
+    <div class="Landing-center">
+        <h1 class="Landing-center--title">Interior Design Studio</h1>
+        <p class="Landing-center--subtitle">We’re here to help you create a home fitted to your lifestyle and
+            personality</p>
+    </div>
+    <div class="Landing-bottom">
+        <div class="Landing-bottom-socials">
+            <a class="Landing-bottom-socials-item" href="instagram.com">
+                <svg class="Landing-bottom-socials-item--svg"></svg>
+            </a>
+            <a class="Landing-bottom-socials-item" href="facebook.com">
+                <svg class="Landing-bottom-socials-item--svg"></svg>
+            </a>
+            <a class="Landing-bottom-socials-item" href="behance.com">
+                <svg class="Landing-bottom-socials-item--svg"></svg>
+            </a>
+        </div>
+        <a class="Landing-bottom-socials-button Btn-secondary" href="#">Let’s connect
+            <svg class="Landing-bottom-socials-button--svg"></svg>
+        </a>
+    </div>
+</div>
+<div class="Dream">
+    <h2 class="Dream-title">
+        <span>live in your</span>
+        <span>dream home</span>
+    </h2>
+    <div class="Dream-secondpart">
+        <a class="Dream-secondpart--link Btn-primary">
+            <span>view</span>
+            <span>video</span>
+        </a>
+        <p class="Dream-secondpart--subtitle">
+            Bring your ideas to life with our boundless creativity and experience
+        </p>
+    </div>
+</div>
+<div class="Confort">
+    <h2 class="Confort-title">
+        <span>We create</span>
+        <span>your comfortable zone</span>
+    </h2>
+    <div class="Confort-content">
+        <div class="Confort-content-item">
+            <h3 class="Confort-content-item--title">Quality</h3>
+            <p class="Confort-content-item--text">We always strive for excellence and pay attention to the smallest
+                details, from materials to composition. Our goal is to create designs that not only meet but exceed your
+                expectations.</p>
+        </div>
+        <div class="Confort-content-item">
+            <h3 class="Confort-content-item--title">Creativity</h3>
+            <p class="Confort-content-item--text">We believe that every project should be unique and reflect the
+                client's personality and vision. Our team combines their technical skills with their imagination to
+                create designs that are not only visually stunning but also tells a story.
+            </p>
+        </div>
+        <div class="Confort-content-item">
+            <h3 class="Confort-content-item--title">Collaboration</h3>
+            <p class="Confort-content-item--text">We think that communication and collaboration are key to the success
+                of any project. That's why we work closely with our clients to understand their needs and goals, and
+                ensure that the final product meets their vision. </p>
+        </div>
+    </div>
+    <img src="./public/confortable-bg.png" class="Confort-background">
+</div>
+<div class="Project">
+    <h2 class="Project-title">Projects</h2>
+
+    <div class="Project-list">
+        <div class="Project-item">
+            <div class="Project-item-content">
+                <p class="Project-item-content-number">01</p>
+                <p class="Project-item-content-title">Stylish family apaapartment</p>
+            </div>
+            <img src="./public/family.png">
+        </div>
+        <div class="Project-item">
+            <div class="Project-item-content">
+                <p class="Project-item-content-number">02</p>
+                <p class="Project-item-content-title">House of the narrative art</p>
+            </div>
+            <img src="./public/art.png">
+        </div>
+        <div class="Project-item">
+            <div class="Project-item-content">
+                <p class="Project-item-content-number">03</p>
+                <p class="Project-item-content-title">K56 co-working space</p>
+            </div>
+            <img src="./public/coworking.png">
+        </div>
+        <div class="Project-item">
+            <div class="Project-item-content">
+                <p class="Project-item-content-number">04</p>
+                <p class="Project-item-content-title">Grand apaapartment</p>
+            </div>
+            <img src="./public/grand.png">
+        </div>
+    </div>
+    <a class="Project-button Btn-secondary" href="#">View all projects
+        <svg class="Landing-bottom-socials-button--svg"></svg>
+    </a>
+</div>
+<div class="Testimonial">
+
+</div>
+<div class="Contact">
+
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>
