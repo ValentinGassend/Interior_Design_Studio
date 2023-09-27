@@ -1,0 +1,38 @@
+.Btn-primary {
+    font-family: $ff_2;
+    font-weight: 300;
+    font-size: 18px;
+    content: "";
+    width: 294px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 0.040px solid $color_white;
+    align-content: center;
+    justify-content: center;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 32px;
+    color: $color_white;
+    text-decoration: none;
+    justify-items: center;
+}
+
+.Btn-secondary {
+    grid-auto-flow: column;
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    padding: 16px 32px;
+    border-radius: 180px;
+    border: 2px solid $color_white;
+    align-content: center;
+    gap: 18px;
+    color: $color_white;
+    text-decoration: none;
+    align-items: center;
+
+    & svg {
+        height: 22px;
+        aspect-ratio: 1;
+    }
+}

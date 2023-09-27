@@ -1,0 +1,50 @@
+.Project {
+    width: 100%;
+
+
+    &-wrapper {
+    }
+
+    &-title {
+        font-size: 111px;
+        font-style: italic;
+        font-weight: 400;
+        margin-left: calc(114px - 40px);
+    }
+
+    &-list {
+    }
+
+    &-item {
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            &-number {
+                opacity: 0.6;
+                font-family: $ff_2;
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+            &-title {
+                font-family: $ff_2;
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+
+        }
+        &-img {
+            width: 100%;
+            object-fit: cover;
+            max-width: 445px;
+             aspect-ratio: 1;
+         }
+    }
+    &-scrollbar {
+        background-color: white;
+    }
+}

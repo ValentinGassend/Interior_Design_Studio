@@ -1,0 +1,33 @@
+.Header {
+    position: fixed;
+    top: 32px;
+    width: 100%;
+    z-index: 10;
+
+
+    &-wrapper {
+        width: initial;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &-logo {
+
+    }
+
+    &-nav {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 16px;
+
+
+        &--item {
+            font-family: $ff_2;
+            font-size: 28px;
+            font-weight: 300;
+            color: $color_white;
+            text-decoration: none;
+        }
+    }
+}

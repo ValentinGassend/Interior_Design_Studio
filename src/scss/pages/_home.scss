@@ -1,0 +1,14 @@
+@import 'blocks/home/Landing';
+@import 'blocks/home/Dream';
+@import 'blocks/home/Confort';
+@import 'blocks/home/Project';
+
+.Home {
+    color: $color_white;
+    background-color: $color_primary;
+    line-height: normal;
+    font-family: $ff_1;
+    font-weight: 400;
+
+
+}

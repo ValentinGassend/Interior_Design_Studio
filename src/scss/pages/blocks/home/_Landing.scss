@@ -1,0 +1,138 @@
+.Landing {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+
+    &-wrapper {
+        display: flex;
+        flex-flow: column;
+        gap: 16px;
+        height: 100%;
+        justify-content: space-between;
+        width: initial;
+        align-items: center;
+        overflow-y: unset;
+
+    }
+
+    &-top {
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    &-middle {
+        height: 100%;
+        width: 100%;
+
+
+        &-wrapper {
+            align-items: center;
+            height: 100%;
+            display: grid;
+            grid-auto-flow: column;
+            gap: 97px;
+            justify-content: start;
+        }
+
+        &:after {
+            content: "";
+            height: 0.040px;
+            /*width: 100vw;*/
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: -50%;
+            right: -50%;
+            background-color: $color_white;
+        }
+    }
+
+    &-link {
+
+    }
+
+    &-center {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 36px;
+
+
+        &--title {
+            font-size: 88px;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+            line-height: 68px;
+        }
+
+        &--subtitle {
+            font-family: $ff_2;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 300;
+            max-width: 60%;
+            margin: 0;
+        }
+    }
+
+    &-bottom {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 42px;
+        overflow-y: hidden;
+
+
+        &-wrapper {
+            height: 100%;
+            width: initial;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 42px;
+            overflow-y: hidden;
+        }
+
+        &-socials {
+            display: grid;
+            grid-auto-flow: row;
+            gap: 24px;
+
+
+            &-item {
+                height: 22px;
+                aspect-ratio: 1;
+                padding-bottom: 10px;
+
+
+                &-svg {
+
+                }
+            }
+        }
+    }
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        max-height: 100vh;
+        object-fit: cover;
+
+
+        &--overflow {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+
+            background-color: $color_black;
+            opacity: 77%;
+        }
+    }
+}
