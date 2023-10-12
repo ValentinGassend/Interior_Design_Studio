@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/img/icon/I_D_S.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Interior Design Studio</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body class="Home">
 <header class="Header ">
@@ -128,11 +129,11 @@
 
 </div>
 <div class="Project">
-    <div class="Project-wrapper container-xl swiper">
+    <div class="Project-wrapper container-xl ">
         <h2 class="Project-title">Projects</h2>
 
-        <div class="Project-list swiper-container">
-            <div class="Project-list swiper-wrapper">
+        <div class="Project-list swiper">
+            <div class="Project-list-container swiper-wrapper">
                 <div class="Project-item swiper-slide">
                     <div class="Project-item-content">
                         <p class="Project-item-content-number">01</p>
@@ -176,8 +177,11 @@
                     <img class="Project-item-img" src="/img/png/project_3.png">
                 </div>
             </div>
-        </div>
-        <div class="Project-scrollbar swiper-scrollbar">
+            <div class="Project-scrollbar swiper-scrollbar ">
+            <div class="Project-scrollbar-drag swiper-scrollbar-drag ">
+            </div>
+            </div>
+
         </div>
         <a class="Project-button Btn-secondary" href="#">View all projects
             <svg class="Landing-bottom-socials-button--svg"></svg>
@@ -185,47 +189,49 @@
     </div>
 </div>
 <div class="Testimonial">
+<div class="Testimonial-wrapper container-m">
     <h2 class="Testimonial-title">Testimonials</h2>
-    <div class="Testimonial-container">
-        <div class="Testimonial-list">
-            <div class="Testimonial-item">
+    <div class="Testimonial-container swiper">
+        <div class="Testimonial-list swiper-wrapper">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
-            <div class="Testimonial-item">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
-            <div class="Testimonial-item">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
-            <div class="Testimonial-item">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
-            <div class="Testimonial-item">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
-            <div class="Testimonial-item">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
-            <div class="Testimonial-item">
+            <div class="Testimonial-item swiper-slide">
                 <p class="Testimonial-item-quote">“ It was such a great experience working with you. Super professional
                     creative and fun to work with. No words to thank you on the great job done “</p>
                 <p class="Testimonial-item-author">Natalia Fisher, K56 owner </p>
             </div>
         </div>
-        <div class="Testimonial-pagination"></div>
+        <div class="Testimonial-pagination swiper-pagination"></div>
     </div>
+</div>
 </div>
 <div class="Contact">
     <h2 class="Contact-intro">Let’s talk about your project!</h2>
@@ -296,6 +302,16 @@
         </div>
     </div>
 </footer>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: true,
+        },
+    });
+</script>
 <script type="module" src="/main.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </body>
 </html>
