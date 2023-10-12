@@ -13,10 +13,11 @@
     }
 
     &-list {
+        display: flex;
     }
 
     &-item {
-
+        max-width: 445px;
         &-content {
             display: flex;
             justify-content: space-between;
@@ -44,7 +45,15 @@
              aspect-ratio: 1;
          }
     }
-    &-scrollbar {
-        background-color: white;
-    }
+    //&-scrollbar {
+    //    position: relative !important;
+    //    top: 500%!important;
+    //    height: 20px!important;
+    //    width: 100%!important;
+    //    --swiper-scrollbar-bg-color: grey;
+    //    //--swiper-scrollbar-drag-bg-color: black;
+    //    &-drag {
+    //        //width: 10% !important;
+    //    }
+    //}
 }
