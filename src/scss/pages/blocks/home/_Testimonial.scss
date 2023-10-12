@@ -1,0 +1,35 @@
+.Testimonial {
+    width: 100%;
+    &-wrapper {
+
+    }
+    &-title {
+        font-size: 111px;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    &-container {
+        width: auto;
+    }
+
+    &-list {
+
+    }
+
+    &-item {
+        &-quote {
+            font-family: $ff_2;
+            font-size: 66px;
+            font-weight: 300;
+            max-width: 1160px;
+        }
+
+        &-author {
+            font-family: $ff_2;
+            font-weight: 300;
+            font-size: 34px;
+            opacity: 0.7;
+        }
+    }
+}
