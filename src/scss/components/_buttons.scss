@@ -6,18 +6,23 @@
     width: 294px;
     aspect-ratio: 1;
     border-radius: 100%;
-    border: 0.040px solid $color_white;
+    border: 1px solid rgba($color_white,0.8);
     align-content: center;
     justify-content: center;
     display: grid;
     grid-auto-flow: row;
     gap: 32px;
-    color: $color_white;
+    color: rgba($color_white,0.8);
     text-decoration: none;
     justify-items: center;
+    &:hover {
+    border-color: $color_white;
+    color: $color_white;
+    }
 }
 
 .Btn-secondary {
+    //todo: faire l'anim de hover cf: https://svitlo-production.com/
     grid-auto-flow: column;
     display: grid;
     width: fit-content;
@@ -30,9 +35,11 @@
     color: $color_white;
     text-decoration: none;
     align-items: center;
-
-    & svg {
-        height: 22px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32px;
+    &--svg {
+        height: 18px;
         aspect-ratio: 1;
     }
 }
