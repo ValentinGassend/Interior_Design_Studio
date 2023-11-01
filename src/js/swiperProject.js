@@ -15,10 +15,6 @@ const swiper = new Swiper('.Project-list', {
     spaceBetween: 20,
     scrollbar: {
         el: ".Project-scrollbar",
-        hide: false,
         draggable: true,
-        enabled:true,
-        dragSize:20,
-        dragClass:".Project-scrollbar-drag"
     },
 });
