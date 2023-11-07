@@ -3,4 +3,10 @@
     }
     100%{
     }
+
+    height: fit-content!important;
+    > * {
+    overflow: hidden;
+    height: fit-content!important;
+}
 }

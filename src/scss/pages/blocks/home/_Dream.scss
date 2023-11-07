@@ -18,7 +18,9 @@
         font-weight: 400;
         gap: 18px;
         margin: 0;
-
+        & span {
+            display: block;
+        }
         &-first {
             text-align: start;
         }
