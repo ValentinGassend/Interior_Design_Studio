@@ -1,14 +1,20 @@
-@keyframes animation{
-    0%{
+@keyframes animation {
+    0% {
     }
-    100%{
+    100% {
     }
 }
+
 ._titleAppear {
 
-    height: fit-content!important;
+    height: fit-content !important;
+
     > * {
-    overflow: hidden;
-    height: fit-content!important;
-}
+        overflow: hidden;
+        height: fit-content !important;
+    }
+
+    & span {
+        display: block;
+    }
 }
