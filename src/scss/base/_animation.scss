@@ -18,3 +18,29 @@
         display: block;
     }
 }
+
+
+@keyframes rotate-left {
+    0% {
+        transform: rotate(0deg);
+
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotate-right {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
