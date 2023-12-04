@@ -18,7 +18,13 @@
         display: block;
     }
 }
-
+._lineAppear {
+    .lineParent {
+        display: block;
+        overflow: hidden;
+        height: fit-content !important;
+    }
+}
 
 @keyframes rotate-left {
     0% {
