@@ -18,7 +18,15 @@
     }
 
     &-item {
+        width: 100%;
         max-width: 445px;
+        transition: all 1s ease-out !important;
+        min-width: 445px;
+
+        &:hover {
+            max-width: 654px;
+            min-width: 654px;
+        }
         &-content {
             display: flex;
             justify-content: space-between;
@@ -40,11 +48,15 @@
 
         }
         &-img {
+            pointer-events: none;
             width: 100%;
             object-fit: cover;
-            max-width: 445px;
+            //max-width: 445px;
+            max-height: 445px;
              aspect-ratio: 1;
-         }
+            transition: all 300ms linear;
+
+        }
     }
 
 }

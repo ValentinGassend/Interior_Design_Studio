@@ -5,20 +5,64 @@
     content: "";
     width: 294px;
     aspect-ratio: 1;
-    border-radius: 100%;
-    border: 1px solid rgba($color_white,0.8);
     align-content: center;
     justify-content: center;
     display: grid;
     grid-auto-flow: row;
     gap: 32px;
-    color: rgba($color_white,0.8);
+    color: rgba($color_white, 0.8);
     text-decoration: none;
     justify-items: center;
+
     &:hover {
-    border-color: $color_white;
-    color: $color_white;
+        border-color: $color_white;
+        color: $color_white;
     }
+
+    &-border {
+        position: absolute;
+        margin: auto;
+        display: block;
+        width: 294px;
+    }
+
+    &-circle.left {
+        position: absolute;
+        width: 294px;
+        aspect-ratio: 1;
+        clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
+    }
+
+    &-circle.right {
+        position: absolute;
+        width: 294px;
+        aspect-ratio: 1;
+        clip: rect(0px, calc(296px / 2), calc(296px), 0px);
+    }
+
+    &-circle span {
+        width: calc(294px);
+        aspect-ratio: 1;
+        border-radius: 100%;
+        position: absolute;
+        opacity: 0.5;
+        border: 1px solid rgba($color_white, 0.8);
+    }
+
+    &-circle.left span {
+        transform: rotate(180deg);
+        clip: rect(0px, calc(296px / 2), calc(296px), 0px);
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in;
+    }
+
+    &-circle.right span {
+        transform: rotate(180deg);
+        clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
+        animation-duration: 2.5s;
+        animation-timing-function: ease-out;
+    }
+
 }
 
 .Btn-secondary {
@@ -38,6 +82,7 @@
     font-size: 28px;
     font-weight: 500;
     line-height: 32px;
+
     &--svg {
         height: 18px;
         aspect-ratio: 1;
