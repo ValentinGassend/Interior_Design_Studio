@@ -13,9 +13,11 @@
     }
 
     &-list {
-        display: grid !important;
+        display: flex !important;
+        flex-direction: column;
         width: 100%;
         grid-auto-flow: row;
+        overflow: hidden !important;
         row-gap: 48px;
     }
 
