@@ -102,10 +102,12 @@
 
 
             &-item {
-                height: 22px;
-                aspect-ratio: 1;
+                height: 24px;
+                width: 24px;
                 padding-bottom: 10px;
-
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 &-svg {
 

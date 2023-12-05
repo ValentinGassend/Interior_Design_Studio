@@ -42,6 +42,7 @@
                 font-weight: 400;
                 line-height: 66px;
                 text-decoration: none;
+
                 &:hover {
                     //todo: faire une animation d'apparition un peu cool
                     text-decoration: underline;
@@ -71,11 +72,14 @@
                 font-size: 24px;
                 font-weight: 300;
                 line-height: 30px;
-                color: rgba($color_white,0.8);
+                color: rgba($color_white, 0.8);
                 opacity: 0.7;
                 text-decoration: none;
+                transition: 300ms color linear, 300ms opacity linear;
+
                 &:hover {
                     color: $color_white;
+                    opacity: 1;
                 }
             }
         }
@@ -88,12 +92,26 @@
             &-ig, &-fb, &-be {
                 border-radius: 100%;
                 border: 0.4px solid rgba($color_white, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
+                transition: 300ms border-color linear;
+
+                svg {
+                    path {
+                        transition: 300ms fill linear, 300ms fill-opacity linear;
+                    }
+                }
                 &:hover {
                     border-color: $color_white;
 
-                    path {
-                        fill: $color_white !important;
+                    svg {
+
+                        path {
+                            fill-opacity:1;
+                            fill: $color_white !important;
+                        }
                     }
                 }
             }
@@ -127,6 +145,7 @@
                 font-weight: 400;
                 font-style: italic;
                 color: rgba($color_white, 0.7);
+                transition: 300ms color linear;
 
                 &:hover {
                     color: $color_white;
