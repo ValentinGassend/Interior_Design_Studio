@@ -33,19 +33,32 @@
             grid-auto-flow: column;
             justify-content: space-between;
             width: 100%;
+            align-items: start;
 
             label {
                 font-size: 24px;
                 line-height: 30px;
                 font-weight: 300;
                 color: rgba($color_white, 0.7);
+
+                transition: 300ms color linear;
+                &.active {
+                    color: $color_white;
+                }
             }
 
-            input {
+            input, textarea {
                 background-color: $color_primary;
                 border: none;
                 border-bottom: 0.4px solid rgba($color_white, 0.8);
-
+                color: $color_white;
+                outline: unset;
+                resize: vertical;
+                max-height: 124px;
+                transition: 300ms border-bottom-color linear;
+                &.active {
+                    border-bottom-color: $color_white;
+                }
             }
         }
 
@@ -72,18 +85,33 @@
         }
 
         &-right {
-            display: grid;
-            grid-auto-flow: row;
-            gap: 60px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            label {
+                height: fit-content;
+            }
+
+            textarea {
+                margin-top: 24px;
+                height: 50%;
+                vertical-align: top;
+
+
+            }
+
             &:hover {
                 label {
                     color: $color_white;
                 }
 
-                input {
+                textarea {
                     border-bottom-color: $color_white;
                 }
             }
+
+
         }
 
         &-submit {
@@ -95,3 +123,4 @@
         }
     }
 }
+
