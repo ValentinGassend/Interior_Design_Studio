@@ -82,9 +82,33 @@
     font-size: 28px;
     font-weight: 500;
     line-height: 32px;
+    overflow: hidden;
+
+    p {
+        margin: 0;
+        animation-name: secondaryBtnUnhover;
+        animation-duration: 300ms;
+        animation-timing-function: linear;
+
+    }
 
     &--svg {
         height: 18px;
         aspect-ratio: 1;
+        animation-name: secondaryBtnUnhoverSvg;
+        animation-duration: 300ms;
+        animation-timing-function: linear;
+    }
+
+    &:hover {
+        p{
+            animation-name: secondaryBtnHover;
+
+
+        }
+        .Btn-secondary--svg {
+            animation-name: secondaryBtnHoverSvg;
+
+        }
     }
 }
