@@ -19,38 +19,38 @@ document.addEventListener("DOMContentLoaded", function () {
             let elementright = btnContainer[i].getElementsByClassName("Btn-primary-border")[0].children[1].children[0]
             elementLeft.classList.add(containers[i] + "-btn-primary-left-children")
             elementright.classList.add(containers[i] + "-btn-primary-right-children")
-            targets = gsap.utils.toArray(elementLeft);
-            targets = gsap.utils.toArray(elementright);
 
 
         }
     }
     for (let i = 0; i < containers.length; i++) {
 
-        console.log("elements : ", "." + containers[i] + "-btn-primary-left-children")
-        console.log("elements : ", "." + containers[i] + "-btn-primary-right-children")
         // console.log("trigger : ", "." +container)
         // console.log(document.getElementsByClassName(containers[i] + "-btn-primary-left-children")[0])
-        container = containers[i]
+        container = containers[1]
         console.log("trigger : ", "." + container)
-        gsap.from("." + containers[i] + "-btn-primary-left-children", {
+        console.log("elements : ", "." + container + "-btn-primary-left-children")
+        console.log("elements : ", "." + container + "-btn-primary-right-children")
+
+        gsap.from("." + container + "-btn-primary-left-children", {
             animationName: "rotate-left",
-            duration: 1,
+            duration: 1.5,
             scrollTrigger: {
                 trigger: "." + container,
-                start: "top center",
+                start: "center center",
                 end: "center center",
                 markers: true,
             }
         })
-        gsap.from("." + containers[i] + "-btn-primary-right-children", {
+        gsap.from("." + container + "-btn-primary-right-children", {
             animationName: "rotate-right",
-            duration: 1,
+            duration: 1.5,
+            delay:1,
             scrollTrigger: {
                 trigger: "." + container,
-                start: "top center",
+                start: "center center",
                 end: "center center",
-                markers: true,
+                // markers: true,
             }
         })
     }
