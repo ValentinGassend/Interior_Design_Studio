@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 trigger: "." + container,
                 start: "center center",
                 end: "center center",
-                markers: true,
+                // markers: true,
             }
         })
         gsap.from("." + container + "-btn-primary-right-children", {
