@@ -55,7 +55,7 @@ let gsap, _win, _doc, _docEl, _body, MotionPathPlugin,  _arrayToRawPath, _rawPat
 				let c = getter(e.target);
 				_copyElement.value = c;
 				if (c && _copyElement.select) {
-					console.log(c);
+					// console.log(c);
 					_copyElement.style.display = "block";
 					_copyElement.select();
 					try {

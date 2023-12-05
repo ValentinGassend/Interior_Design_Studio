@@ -36,6 +36,7 @@
         width: 294px;
         aspect-ratio: 1;
         clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
+
     }
 
     &-circle.right {
@@ -43,6 +44,7 @@
         width: 294px;
         aspect-ratio: 1;
         clip: rect(0px, calc(296px / 2), calc(296px), 0px);
+
     }
 
     &-circle span {
@@ -54,21 +56,29 @@
         border: 1px solid rgba($color_white, 0.8);
         transition: 300ms border-color linear;
 
+
     }
 
     &-circle.left span {
-        transform: rotate(180deg);
         clip: rect(0px, calc(296px / 2), calc(296px), 0px);
         animation-duration: 2.5s;
         animation-timing-function: ease-in;
+
+        &.active {
+            transform: rotate(180deg);
+        }
     }
 
     &-circle.right span {
-        transform: rotate(180deg);
         clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
         animation-duration: 2.5s;
         animation-timing-function: ease-out;
+
+        &.active {
+            transform: rotate(180deg);
+        }
     }
+
 
 }
 
@@ -108,11 +118,12 @@
     }
 
     &:hover {
-        p{
+        p {
             animation-name: secondaryBtnHover;
 
 
         }
+
         .Btn-secondary--svg {
             animation-name: secondaryBtnHoverSvg;
 

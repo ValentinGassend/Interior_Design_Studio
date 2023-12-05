@@ -167,7 +167,7 @@
 	  };
 
 	  if (!d || !isNaN(a[0]) || isNaN(a[1])) {
-	    console.log(errorMessage);
+	    // console.log(errorMessage);
 	    return path;
 	  }
 
@@ -309,7 +309,7 @@
 	      relativeX = segment[segment.length - 2];
 	      relativeY = segment[segment.length - 1];
 	    } else {
-	      console.log(errorMessage);
+	      // console.log(errorMessage);
 	    }
 	  }
 

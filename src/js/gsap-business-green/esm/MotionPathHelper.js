@@ -83,7 +83,7 @@ _selectorExp = /(^[#\.][a-z]|[a-y][a-z])/i,
       _copyElement.value = c;
 
       if (c && _copyElement.select) {
-        console.log(c);
+        // console.log(c);
         _copyElement.style.display = "block";
 
         _copyElement.select();

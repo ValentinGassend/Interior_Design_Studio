@@ -220,7 +220,7 @@
 	  };
 
 	  if (!d || !isNaN(a[0]) || isNaN(a[1])) {
-	    console.log(errorMessage);
+	    // console.log(errorMessage);
 	    return path;
 	  }
 
@@ -362,7 +362,7 @@
 	      relativeX = segment[segment.length - 2];
 	      relativeY = segment[segment.length - 1];
 	    } else {
-	      console.log(errorMessage);
+	      // console.log(errorMessage);
 	    }
 	  }
 
@@ -2860,7 +2860,7 @@
 	      _copyElement$1.value = c;
 
 	      if (c && _copyElement$1.select) {
-	        console.log(c);
+	        // console.log(c);
 	        _copyElement$1.style.display = "block";
 
 	        _copyElement$1.select();

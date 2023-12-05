@@ -1006,7 +1006,7 @@ _merge = function _merge() {
 
     if (_isString(anim)) {
       anim = _getAnimationById(anim);
-    } //console.log("animation() ", anim.vars.id);
+    } //// console.log("animation() ", anim.vars.id);
 
 
     if (!(anim instanceof Animation)) {

@@ -4,11 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let containers = []
     let container;
-    let targets
-    console.log(btnContainer)
-    console.log(containers)
-    document
+
     for (let i = 0; i < btnContainer.length; i++) {
+
         container = btnContainer[i].closest('section').classList[0]
 
         containers = [].concat(containers, container)
@@ -17,40 +15,40 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let j = 0; j < btnContainer[i].getElementsByClassName("Btn-primary-border")[0].children.length; j++) {
             let elementLeft = btnContainer[i].getElementsByClassName("Btn-primary-border")[0].children[0].children[0]
             let elementright = btnContainer[i].getElementsByClassName("Btn-primary-border")[0].children[1].children[0]
-            elementLeft.classList.add(containers[i] + "-btn-primary-left-children")
-            elementright.classList.add(containers[i] + "-btn-primary-right-children")
+            elementLeft.classList.add(container + "-btn-primary-left-children")
+            elementright.classList.add(container + "-btn-primary-right-children")
 
 
         }
     }
     for (let i = 0; i < containers.length; i++) {
+        container = containers[i]
 
-        // console.log("trigger : ", "." +container)
-        // console.log(document.getElementsByClassName(containers[i] + "-btn-primary-left-children")[0])
-        container = containers[1]
-        console.log("trigger : ", "." + container)
-        console.log("elements : ", "." + container + "-btn-primary-left-children")
-        console.log("elements : ", "." + container + "-btn-primary-right-children")
-
-        gsap.from("." + container + "-btn-primary-left-children", {
+        gsap.to("." + container + "-btn-primary-left-children", {
             animationName: "rotate-left",
             duration: 1.5,
             scrollTrigger: {
                 trigger: "." + container,
-                start: "center center",
+                start: "top center",
                 end: "center center",
                 // markers: true,
+            },
+            onComplete: function () {
+                this._pt.t.classList.add("active")
             }
         })
-        gsap.from("." + container + "-btn-primary-right-children", {
+        gsap.to("." + container + "-btn-primary-right-children", {
             animationName: "rotate-right",
             duration: 1.5,
-            delay:1,
+            // delay:1,
             scrollTrigger: {
                 trigger: "." + container,
-                start: "center center",
+                start: "top center",
                 end: "center center",
                 // markers: true,
+            },
+            onComplete: function () {
+                this._pt.t.classList.add("active")
             }
         })
     }

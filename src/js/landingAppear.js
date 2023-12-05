@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     gsap.registerPlugin(SplitText);
-    console.log(gsap)
+    // console.log(gsap)
     jQuery('.Page-title:not(.__scramble)');
-    //console.log(gsap);
+    //// console.log(gsap);
     let title = jQuery('.__scrambleHeadline');
 
 
