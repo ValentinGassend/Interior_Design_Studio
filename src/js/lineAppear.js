@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     trigger: trigger,
                     start: "top center",
                     end: "center center",
-                    markers: true,
+                    // markers: true,
                 }
             })
         }
