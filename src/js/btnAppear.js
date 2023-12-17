@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         gsap.to("." + container + "-btn-primary-left-children", {
             animationName: "rotate-left",
-            duration: 1.5,
+            duration: 2.5,
             scrollTrigger: {
                 trigger: "." + container,
                 start: "top center",
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         gsap.to("." + container + "-btn-primary-right-children", {
             animationName: "rotate-right",
-            duration: 1.5,
+            duration: 2.5,
             // delay:1,
             scrollTrigger: {
                 trigger: "." + container,

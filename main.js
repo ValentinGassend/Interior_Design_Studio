@@ -1,4 +1,5 @@
 import './src/scss/style.scss'
+import './src/js/loader.js'
 import './src/js/swiperProject.js'
 import './src/js/swiperTestimonial.js'
 import './src/js/titleAppear.js'

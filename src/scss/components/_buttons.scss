@@ -106,6 +106,7 @@
         animation-name: secondaryBtnUnhover;
         animation-duration: 300ms;
         animation-timing-function: linear;
+        animation-direction: reverse;
 
     }
 
@@ -115,17 +116,20 @@
         animation-name: secondaryBtnUnhoverSvg;
         animation-duration: 300ms;
         animation-timing-function: linear;
+        animation-direction: reverse;
     }
 
     &:hover {
         p {
             animation-name: secondaryBtnHover;
+            animation-direction: reverse;
 
 
         }
 
         .Btn-secondary--svg {
             animation-name: secondaryBtnHoverSvg;
+            animation-direction: reverse;
 
         }
     }

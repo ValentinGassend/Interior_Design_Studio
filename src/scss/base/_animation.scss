@@ -5,7 +5,19 @@
     }
 }
 
-
+@keyframes slideOut {
+    to {
+        transform: translateX(100%);
+    }
+}
+@keyframes lineSlideOut {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100vw;
+    }
+}
 ._titleAppear {
 
     height: fit-content !important;
