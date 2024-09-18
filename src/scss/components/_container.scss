@@ -4,6 +4,14 @@
     width: initial;
     margin-left: 120px !important;
     margin-right: 120px !important;
+
+  @include media("<=medium") {
+
+    margin: 0 16px !important;
+    width: calc(100% - 64px )!important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
 }
 
 .container-xl {
@@ -11,11 +19,27 @@
     margin-left: 40px !important;
     margin-right: 40px !important;
     width: initial;
+  @include media("<=medium") {
+
+    margin: 0 16px !important;
+    width: calc(100% - 64px )!important;
+
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+
 
 }.container-s {
      margin: 0 400px !important;
      margin-left: 400px !important;
      margin-right: 400px !important;
      width: initial;
+   @include media("<=medium") {
+     margin: 0 334px !important;
+     width: initial;
+     margin-left: 16px !important;
+     margin-right: 16px !important;
+   }
+
 
  }

@@ -1,136 +1,180 @@
 .Btn-primary {
-    font-family: $ff_2;
-    font-weight: 300;
-    font-size: 18px;
-    content: "";
+  font-family: $ff_2;
+  font-weight: 300;
+  font-size: 18px;
+  content: "";
+  width: 294px;
+  aspect-ratio: 1;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 32px;
+  color: rgba($color_white, 0.8);
+  text-decoration: none;
+  justify-items: center;
+  transition: 300ms color linear;
+
+  @include media('<=small') {
+    width: 164px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+
+  }
+  &:hover {
+    color: $color_white;
+
+    .Btn-primary-circle span {
+      border-color: $color_white;
+
+    }
+  }
+
+  &-border {
+    position: absolute;
+    margin: auto;
+    display: block;
+    width: 294px;
+    @include media('<=small') {
+      width: 164px;
+    }
+
+  }
+
+  &-circle.left {
+    position: absolute;
     width: 294px;
     aspect-ratio: 1;
-    align-content: center;
-    justify-content: center;
-    display: grid;
-    grid-auto-flow: row;
-    gap: 32px;
-    color: rgba($color_white, 0.8);
-    text-decoration: none;
-    justify-items: center;
-    transition: 300ms color linear;
+    clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
 
-    &:hover {
-        color: $color_white;
+    @include media('<=small') {
+      clip: rect(0, calc(164px), calc(164px), calc(164px / 2));
 
-        .Btn-primary-circle span {
-            border-color: $color_white;
-
-        }
+      width: 164px;
     }
 
-    &-border {
-        position: absolute;
-        margin: auto;
-        display: block;
-        width: 294px;
-    }
+  }
 
-    &-circle.left {
-        position: absolute;
-        width: 294px;
-        aspect-ratio: 1;
-        clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
+  &-circle.right {
+    position: absolute;
+    width: 294px;
+    aspect-ratio: 1;
+    clip: rect(0px, calc(296px / 2), calc(296px), 0px);
+
+    @include media('<=small') {
+      width: 164px;
+      clip: rect(0px, calc(164px / 2), calc(164px), 0px);
 
     }
 
-    &-circle.right {
-        position: absolute;
-        width: 294px;
-        aspect-ratio: 1;
-        clip: rect(0px, calc(296px / 2), calc(296px), 0px);
+  }
+
+  &-circle span {
+    width: calc(294px);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    position: absolute;
+    opacity: 0.5;
+    border: 1px solid rgba($color_white, 0.8);
+    transition: 300ms border-color linear;
+    @include media('<=small') {
+      width: 162px;
+    }
+
+  }
+
+  &-circle.left span {
+    clip: rect(0px, calc(296px / 2), calc(296px), 0px);
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    @include media('<=small') {
+      clip: rect(0px, calc(164px / 2), calc(164px), 0px);
 
     }
 
-    &-circle span {
-        width: calc(294px);
-        aspect-ratio: 1;
-        border-radius: 100%;
-        position: absolute;
-        opacity: 0.5;
-        border: 1px solid rgba($color_white, 0.8);
-        transition: 300ms border-color linear;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-circle.right span {
+    clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
+    @include media('<=small') {
+      clip: rect(0, calc(164px), calc(164px), calc(164px / 2));
 
 
     }
 
-    &-circle.left span {
-        clip: rect(0px, calc(296px / 2), calc(296px), 0px);
-        animation-duration: 2.5s;
-        animation-timing-function: ease-in;
-
-        &.active {
-            transform: rotate(180deg);
-        }
+    &.active {
+      transform: rotate(180deg);
     }
-
-    &-circle.right span {
-        clip: rect(0, calc(296px), calc(296px), calc(296px / 2));
-        animation-duration: 2.5s;
-        animation-timing-function: ease-out;
-
-        &.active {
-            transform: rotate(180deg);
-        }
-    }
+  }
 
 
 }
 
 .Btn-secondary {
-    //todo: faire l'anim de hover cf: https://svitlo-production.com/
-    grid-auto-flow: column;
-    display: grid;
-    width: fit-content;
-    height: fit-content;
-    padding: 16px 32px;
-    border-radius: 180px;
-    border: 2px solid $color_white;
-    align-content: center;
-    gap: 18px;
-    color: $color_white;
-    text-decoration: none;
-    align-items: center;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 32px;
-    overflow: hidden;
+  //todo: faire l'anim de hover cf: https://svitlo-production.com/
+  grid-auto-flow: column;
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+  padding: 16px 32px;
+  border-radius: 180px;
+  border: 2px solid $color_white;
+  align-content: center;
+  gap: 18px;
+  color: $color_white;
+  text-decoration: none;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+  overflow: hidden;
+  @include media('<=small') {
+    font-size: 16px;
+    line-height: 20px;
+    gap: 14px;
 
+  }
+  p {
+    margin: 0;
+    animation-name: secondaryBtnUnhover;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+
+  }
+
+  &--svg {
+    height: 18px;
+    aspect-ratio: 1;
+    animation-name: secondaryBtnUnhoverSvg;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    @include media('<=small') {
+      transform: scale(0.75);
+
+    }
+
+  }
+
+  &:hover {
     p {
-        margin: 0;
-        animation-name: secondaryBtnUnhover;
-        animation-duration: 300ms;
-        animation-timing-function: linear;
-        animation-direction: reverse;
+      animation-name: secondaryBtnHover;
+      animation-direction: reverse;
+
 
     }
 
-    &--svg {
-        height: 18px;
-        aspect-ratio: 1;
-        animation-name: secondaryBtnUnhoverSvg;
-        animation-duration: 300ms;
-        animation-timing-function: linear;
-        animation-direction: reverse;
+    .Btn-secondary--svg {
+      animation-name: secondaryBtnHoverSvg;
+      animation-direction: reverse;
+
     }
-
-    &:hover {
-        p {
-            animation-name: secondaryBtnHover;
-            animation-direction: reverse;
-
-
-        }
-
-        .Btn-secondary--svg {
-            animation-name: secondaryBtnHoverSvg;
-            animation-direction: reverse;
-
-        }
-    }
+  }
 }

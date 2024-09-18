@@ -1,5 +1,8 @@
 .Project {
     width: 100%;
+    @include media('<=small') {
+        margin-top: 166px;
+    }
 
 
     &-wrapper {
@@ -10,6 +13,12 @@
         font-style: italic;
         font-weight: 400;
         margin-left: calc(114px - 40px);
+        @include media('<=small') {
+            font-size: 28px;
+            line-height: 32px;
+            margin: 0;
+        }
+
     }
 
     &-list {
@@ -19,6 +28,10 @@
         grid-auto-flow: row;
         overflow: hidden !important;
         row-gap: 48px;
+        @include media('<=small') {
+            row-gap: 26px;
+        }
+
     }
 
     &-container {
@@ -26,6 +39,12 @@
         display: grid;
         grid-auto-flow: row;
         row-gap: 112px;
+        @include media('<=small') {
+            margin-top: 40px;
+            row-gap: 68px;
+            justify-items: center;
+        }
+
     }
 
     &-scrollbar {
@@ -51,10 +70,19 @@
         max-width: 445px;
         transition: all 1s ease-out !important;
         min-width: 445px;
+        @include media('<=small') {
+            max-width: 222px;
+            min-width: 222px;
+        }
 
         &:hover {
             max-width: 654px;
             min-width: 654px;
+
+            @include media('<=small') {
+                max-width: 320px;
+                min-width: 320px;
+            }
         }
 
         &-content {
@@ -67,12 +95,22 @@
                 font-family: $ff_2;
                 font-size: 18px;
                 font-weight: 300;
+
+                @include media('<=small') {
+                    font-size: 12px;
+                    line-height: 14px;
+                }
             }
 
             &-title {
                 font-family: $ff_2;
                 font-size: 18px;
                 font-weight: 300;
+
+                @include media('<=small') {
+                    font-size: 12px;
+                    line-height: 14px;
+                }
             }
 
 
