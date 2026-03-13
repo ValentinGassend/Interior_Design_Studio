@@ -32,7 +32,7 @@
       height: 100%;
       display: flex;
       align-items: center;
-      column-gap: 97px;
+      column-gap: 32px;
       justify-content: flex-start;
 
       @include media("<=medium") {
@@ -73,6 +73,9 @@
 
   &-link {
     flex-shrink: 0;
+    transform: scale(0.75);
+    transform-origin: left center;
+    margin-right: -74px;
     @include media("<=medium") {
       display: none;
     }
@@ -96,7 +99,7 @@
 
       &--content {
         display: block;
-        font-size: 88px;
+        font-size: min(88px, 6.5vw);
         font-style: italic;
         font-weight: 400;
         margin: 0;
@@ -104,15 +107,15 @@
         white-space: nowrap;
 
         @include media('<=large') {
-          font-size: 72px;
+          font-size: min(72px, 7vw);
         }
 
         @include media('<=medium') {
-          font-size: 56px;
+          font-size: min(56px, 8vw);
         }
 
         @include media('<=small') {
-          font-size: 32px;
+          font-size: min(32px, 9vw);
           line-height: 1.2;
         }
       }
