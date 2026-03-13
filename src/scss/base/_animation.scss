@@ -18,6 +18,14 @@
         width: 100vw;
     }
 }
+@keyframes lineLoad {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
 ._titleAppear {
 
     height: fit-content !important;

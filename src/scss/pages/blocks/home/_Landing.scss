@@ -11,7 +11,7 @@
     gap: 16px;
     height: 100%;
     justify-content: space-between;
-    width: initial;
+    width: 100%;
     align-items: center;
     overflow-y: unset;
 
@@ -26,138 +26,179 @@
   &-middle {
     height: 100%;
     width: 100%;
-
+    position: relative; // Anchor for the absolute line
 
     &-wrapper {
-      align-items: center;
       height: 100%;
-      display: grid;
-      grid-auto-flow: column;
-      gap: 97px;
-      justify-content: start;
+      display: flex;
+      align-items: center;
+      column-gap: 97px;
+      justify-content: flex-start;
 
+      @include media("<=medium") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        text-align: center;
+      }
     }
 
     &--underline {
       height: 0.4px;
       position: absolute;
-      background-color: $color_white;
+      top: 50%;
       left: 0;
-      top: 50%;
-      bottom: 50%;
-      animation: lineSlideOut 5s ease-out forwards 0.75s;
-    }
-
-    &:after {
-      content: "";
-      height: 0.040px;
-      /*width: 100vw;*/
-      position: absolute;
-      top: 50%;
-      bottom: 50%;
-      left: -50%;
-      right: -50%;
+      right: 0;
       background-color: $color_white;
+      z-index: 1;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: lineLoad 4s ease-in-out forwards 4.2s;
+
+      &:after {
+        content: "";
+        height: 0.4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: rgba($color_white, 0.3);
+        z-index: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+        animation: lineLoad 2s ease-out forwards 3.8s;
+      }
     }
   }
 
   &-link {
+    flex-shrink: 0;
     @include media("<=medium") {
       display: none;
-
     }
   }
-  .Btn-primary {
-    &-circle.left span,&-circle.right span {
-      animation-duration: 5s;
 
-    }
-  }
   &-center {
     display: grid;
-    grid-auto-flow: row;
-    gap: 36px;
+    grid-template-rows: 1fr 1fr; // Balanced rows around the 50% line
+    row-gap: 36px; // Total gap between title and subtitle
+    height: fit-content;
 
+    @include media("<=medium") {
+      row-gap: 24px;
+      justify-items: center;
+    }
 
     &--title {
-      margin: 0 0 4px 0;
+      align-self: end; // Anchors to the bottom of the first 1fr row
+      margin: 0;
       height: fit-content !important;
+
       &--content {
-        transform: translateY(50%);
+        display: block;
         font-size: 88px;
         font-style: italic;
         font-weight: 400;
         margin: 0;
-        line-height: 68px;
-        @include media('<=small') {
-          font-size: 30px;
-          line-height: 36px;
+        line-height: 1.1;
+        white-space: nowrap;
+
+        @include media('<=large') {
+          font-size: 72px;
         }
 
+        @include media('<=medium') {
+          font-size: 56px;
+        }
+
+        @include media('<=small') {
+          font-size: 32px;
+          line-height: 1.2;
+        }
       }
     }
 
     &--subtitle {
+      align-self: start; // Anchors to the top of the second 1fr row
       font-family: $ff_2;
       font-size: 28px;
       font-style: normal;
       font-weight: 300;
-      max-width: 60%;
+      max-width: 600px;
       margin: 0;
+
+      @include media('<=large') {
+        font-size: 24px;
+        max-width: 500px;
+      }
+
+      @include media('<=medium') {
+        font-size: 20px;
+        max-width: 400px;
+      }
 
       @include media('<=small') {
         font-size: 16px;
-        line-height: 20px;
+        line-height: 1.4;
+        max-width: 100%;
       }
     }
   }
 
   &-bottom {
-    height: 100%;
     width: 100%;
     margin-bottom: 42px;
-    overflow-y: hidden;
-
 
     &-wrapper {
-      height: 100%;
-      width: initial;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 42px;
-      overflow-y: hidden;
+
+      @include media('<=small') {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+        height: auto;
+        margin-bottom: 20px;
+      }
     }
 
     &-socials {
-      display: grid;
-      grid-auto-flow: row;
+      display: flex;
+      flex-direction: column;
       gap: 24px;
       @include media("<=medium") {
-      display: none;
+        display: none;
       }
 
       &-item {
         height: 24px;
         width: 24px;
-        padding-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
+        opacity: 0.7;
+        transition: opacity 300ms ease;
 
-        &-svg {
-
+        &:hover {
+          opacity: 1;
         }
       }
-      &-button {
-        @include media("<=medium") {
+    }
 
-          width: 100%;
-          text-align: center;
-          gap: 16px;
-          justify-content: center;
-        }
-      }
+    &-socials-button {
+       @include media("<=small") {
+         width: 100% !important;
+         display: flex !important;
+         justify-content: center;
+
+         .Btn-secondary {
+           width: 100%;
+           box-sizing: border-box;
+         }
+       }
     }
   }
 
@@ -167,26 +208,17 @@
     left: 0;
     z-index: -1;
     width: 100%;
-    max-height: 100vh;
+    height: 100%;
     object-fit: cover;
 
-    @include media('<=small') {
-      height: 100vh;
-      width: fit-content;
-      transform: translate(-50%);
-
-    }
-
     &--overflow {
-      content: "";
       width: 100%;
       height: 100%;
       position: absolute;
       top: 0;
+      left: 0;
       z-index: -1;
-
-      background-color: $color_black;
-      opacity: 77%;
+      background-color: rgba($color_black, 0.77);
     }
   }
 }

@@ -4,7 +4,8 @@
   font-size: 18px;
   content: "";
   width: 294px;
-  aspect-ratio: 1;
+  height: 294px;
+  position: relative;
   align-content: center;
   justify-content: center;
   display: grid;
@@ -14,13 +15,15 @@
   text-decoration: none;
   justify-items: center;
   transition: 300ms color linear;
+  box-sizing: border-box;
 
   @include media('<=small') {
     width: 164px;
+    height: 164px;
     text-transform: uppercase;
     font-size: 14px;
     line-height: 14px;
-
+    gap: 16px;
   }
   &:hover {
     color: $color_white;
@@ -118,47 +121,57 @@
 
 .Btn-secondary {
   //todo: faire l'anim de hover cf: https://svitlo-production.com/
-  grid-auto-flow: column;
-  display: grid;
+  display: inline-flex;
   width: fit-content;
   height: fit-content;
   padding: 16px 32px;
   border-radius: 180px;
   border: 2px solid $color_white;
-  align-content: center;
   gap: 18px;
   color: $color_white;
   text-decoration: none;
   align-items: center;
+  justify-content: center;
   font-size: 28px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 1.2;
   overflow: hidden;
+  box-sizing: border-box;
+
   @include media('<=small') {
     font-size: 16px;
-    line-height: 20px;
-    gap: 14px;
-
+    padding: 12px 24px;
+    gap: 12px;
   }
+
   p {
     margin: 0;
     animation-name: secondaryBtnUnhover;
     animation-duration: 300ms;
     animation-timing-function: linear;
     animation-direction: reverse;
+    display: inline-block;
 
   }
 
   &--svg {
     height: 18px;
-    aspect-ratio: 1;
+    width: 18px; // Ensure explicit width
+    flex-shrink: 0;
+    display: block; // Fix inline alignment issues
     animation-name: secondaryBtnUnhoverSvg;
     animation-duration: 300ms;
     animation-timing-function: linear;
     animation-direction: reverse;
-    @include media('<=small') {
-      transform: scale(0.75);
 
+    @include media('<=small') {
+      height: 14px;
+      width: 14px;
+    }
+
+    // Ensure the SVG child also scales properly
+    svg, & {
+       overflow: visible; // Prevent cropping during animation transforms
     }
 
   }

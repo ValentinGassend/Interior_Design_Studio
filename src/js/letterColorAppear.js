@@ -1,10 +1,6 @@
 import {SplitText} from "./gsap-business-green/src/SplitText.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-    // gsap.registerPlugin(SplitText);
-    // console.log(gsap)
     let titles = document.getElementsByClassName("__letterColorAppear")
     if (titles.length > 0) {
         for (let i = 0; i < titles.length; i++) {
@@ -18,39 +14,22 @@ document.addEventListener("DOMContentLoaded", function () {
             wordsClass: "__letterColorAppear--word letterColor--word",
             charsClass: "__letterColorAppear--char letterColor--char"
         })
-        // console.log("mySplitText :", mySplitText)
-        let words = mySplitText.words;
+        
         let chars = mySplitText.chars;
-        words.forEach((word, index) => {
-            // Création d'une animation pour chaque mot, qui affecte ses caractères
-            gsap.fromTo(word.children, {
-                opacity: "30%",
-                duration: 0.5,
-
-            },{
-                    opacity: "100%",
-
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: word,
-                        start: "center 75%",
-                        end: "center center",
-                    }
-
-                })
+        
+        // Animating all characters with scrub for bi-directional scroll effect
+        gsap.fromTo(chars, {
+            opacity: 0.2, // Base dimmed state
+        }, {
+            opacity: 1, // Full color state
+            stagger: 0.05,
+            ease: "none",
+            scrollTrigger: {
+                trigger: text,
+                start: "top 80%", // Start when top of text hits 80% of viewport
+                end: "bottom 40%", // Finish when bottom hits 40%
+                scrub: true, // Sync animation with scroll (reverse on scroll up)
+            }
         });
-        // gsap.to(chars, {
-        //     opacity: "100%",
-        //     duration: 0.5,
-        //     stagger: 0.1,
-        //     scrollTrigger: {
-        //         trigger: words,
-        //         start: "center center",
-        //         end: "center center",
-        //         markers: true,
-        //     }
-        //
-        // })
-
     }
 });

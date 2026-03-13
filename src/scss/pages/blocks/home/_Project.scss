@@ -1,7 +1,9 @@
 .Project {
     width: 100%;
+    padding: 100px 0;
+
     @include media('<=small') {
-        margin-top: 166px;
+        padding: 60px 0;
     }
 
 
@@ -12,56 +14,47 @@
         font-size: 111px;
         font-style: italic;
         font-weight: 400;
-        margin-left: calc(114px - 40px);
-        @include media('<=small') {
-            font-size: 28px;
-            line-height: 32px;
-            margin: 0;
+        margin-bottom: 60px;
+
+        @include media('<=medium') {
+            font-size: 80px;
         }
 
+        @include media('<=small') {
+            font-size: 40px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
     }
 
     &-list {
-        display: flex !important;
-        flex-direction: column;
         width: 100%;
-        grid-auto-flow: row;
-        overflow: hidden !important;
-        row-gap: 48px;
-        @include media('<=small') {
-            row-gap: 26px;
-        }
-
+        overflow: visible;
     }
 
     &-container {
         width: 100%;
-        display: grid;
-        grid-auto-flow: row;
-        row-gap: 112px;
-        @include media('<=small') {
-            margin-top: 40px;
-            row-gap: 68px;
-            justify-items: center;
-        }
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
 
+        @include media('<=small') {
+            gap: 40px;
+        }
     }
 
     &-scrollbar {
-        position: unset !important;
-        background-color: rgba($color_white, 0.8) !important;
+        margin-top: 40px;
+        height: 4px;
+        background: rgba($color_white, 0.1);
+        position: relative !important;
+        border-radius: 4px;
         width: 100%;
-        height: 1px !important;
-        overflow-y: visible;
-        margin: 2px 0;
-        display: flex;
-        align-items: center;
 
         .swiper-scrollbar-drag {
-            border-radius: 0 !important;
-            background-color: $color_white;
-            opacity: 1;
-            height: 4px !important;
+            background: rgba($color_white, 0.8);
+            height: 100%;
+            border-radius: 4px;
         }
     }
 
@@ -70,18 +63,32 @@
         max-width: 445px;
         transition: all 1s ease-out !important;
         min-width: 445px;
+
         @include media('<=small') {
-            max-width: 222px;
-            min-width: 222px;
+            // Reset for mobile Swiper logic
+            max-width: 100%;
+            min-width: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            
+            .Project-item-content, .Project-item-img {
+                opacity: 0.3;
+                transform: scale(0.92);
+                transition: inherit;
+            }
+
+            &.swiper-slide-active {
+                .Project-item-content, .Project-item-img {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
         }
 
         &:hover {
-            max-width: 654px;
-            min-width: 654px;
-
-            @include media('<=small') {
-                max-width: 320px;
-                min-width: 320px;
+            @include media('>small') {
+                max-width: 654px;
+                min-width: 654px;
             }
         }
 
@@ -89,42 +96,44 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+            margin-bottom: 12px;
 
-            &-number {
-                opacity: 0.6;
+            &-number, &-title {
+                opacity: 0.7;
                 font-family: $ff_2;
                 font-size: 18px;
                 font-weight: 300;
 
                 @include media('<=small') {
-                    font-size: 12px;
-                    line-height: 14px;
+                    font-size: 14px;
                 }
             }
-
-            &-title {
-                font-family: $ff_2;
-                font-size: 18px;
-                font-weight: 300;
-
-                @include media('<=small') {
-                    font-size: 12px;
-                    line-height: 14px;
-                }
-            }
-
-
         }
 
         &-img {
             pointer-events: none;
             width: 100%;
             object-fit: cover;
-            //max-width: 445px;
-            max-height: 445px;
-            aspect-ratio: 1;
+            display: block;
             transition: all 300ms linear;
 
+            // Desktop: Lock height to 445px so it only expands in X
+            @include media('>small') {
+                height: 445px;
+            }
+
+            // Mobile: Keep aspect ratio
+            @include media('<=small') {
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    &-button {
+        align-self: flex-start;
+        margin-top: 40px;
+        @include media('<=small') {
+            align-self: center;
         }
     }
 

@@ -14,29 +14,33 @@ const swiper = new Swiper('.Project-list', {
     // loop: true,
     // direction: 'horizontal',
     loop: false,
-    slidesPerView: 4,
-    spaceBetween: 20,
+    speed: 600,
+    watchSlidesProgress: true,
     scrollbar: {
         el: ".Project-scrollbar",
         draggable: true,
     },
+    // Default mobile settings
+    slidesPerView: 1.2,
+    spaceBetween: 24,
+    centeredSlides: true,
+    grabCursor: true,
+
     breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 10
-        },
         768: {
-            slidesPerView: 2,
-            spaceBetween: 10
+            slidesPerView: 2.2,
+            spaceBetween: 20,
+            centeredSlides: false
         },
         1024: {
             slidesPerView: 3,
-            spaceBetween: 10
+            spaceBetween: 20,
+            centeredSlides: false
         },
         1200: {
             slidesPerView: 4,
-            spaceBetween: 20
-
+            spaceBetween: 20,
+            centeredSlides: false
         }
     },
 });
